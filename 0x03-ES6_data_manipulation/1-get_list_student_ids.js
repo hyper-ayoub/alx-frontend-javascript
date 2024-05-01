@@ -3,8 +3,7 @@ export default function getListStudentIds(list) {
   // Check if the argument is an array
   if (!Array.isArray(list)) {
     return [];
-  } else {
-    // Use map function to extract ids from objects in the array
-    return list.map(student => student.id);
+  }
+  return list.map(student => student.id);
   }
 }

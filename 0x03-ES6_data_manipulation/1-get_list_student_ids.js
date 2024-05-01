@@ -1,10 +1,10 @@
 // 1-get_list_student_ids.js
- export default function getListStudentIds(list) {
+ export default function getListStudentIds(arg) {
   // Check if the argument is an array
-  if (!Array.isArray(list)) {
+  if (!Array.isArray(arg)) {
     return [];
   }
 
   // Use map function to extract ids from objects in the array
-  return list.map(student => student.id);
+  return arg.map((arg) => arg.id);
 }

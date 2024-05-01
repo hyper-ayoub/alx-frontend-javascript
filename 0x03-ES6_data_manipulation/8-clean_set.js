@@ -1,6 +1,9 @@
-export default function cleanSet(Set, startString) {
-    return Array.from(Set)
-        .filter(value => value.startsWith(startString))
-        .map(value => value.slice(startString.length))
-        .join('-');
+export default function cleanSet(set, startString) {
+  let res;
+  if (!startString || typeof startString !== 'string') {
+    return '';
+  }
+  res = Array.from(set).filter((word) => typeof word === 'string' && word.startsWith(startString));
+  res = res.map((word) => word.slice(startString.length));
+  return res.join('-');
 }

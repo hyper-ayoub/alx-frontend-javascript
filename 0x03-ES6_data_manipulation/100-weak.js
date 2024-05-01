@@ -1,26 +1,13 @@
-const weakMap = new WeakMap();
+export const weakMap = new WeakMap();
 
-export { weakMap };
+const MAX_ENDPOINT_CALLS = 5;
 
 export function queryAPI(endpoint) {
-  const count = weakMap.get(endpoint) || 0;
-  weakMap.set(endpoint, count + 1);
-  
-  if (count + 1 >= 5) {
+  if (!weakMap.has(endpoint)) {
+    weakMap.set(endpoint, 0);
+  }
+  weakMap.set(endpoint, weakMap.get(endpoint) + 1);
+  if (weakMap.get(endpoint) >= MAX_ENDPOINT_CALLS) {
     throw new Error('Endpoint load is high');
   }
 }
-const weakMap = new WeakMap();
-
-export { weakMap };
-
-export function queryAPI(endpoint) {
-  const count = weakMap.get(endpoint) || 0;
-  weakMap.set(endpoint, count + 1);
-  
-  if (count + 1 >= 5) {
-    throw new Error('Endpoint load is high');
-  }
-}
-
-

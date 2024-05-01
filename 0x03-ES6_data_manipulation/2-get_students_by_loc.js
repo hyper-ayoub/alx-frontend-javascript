@@ -1,7 +1,8 @@
-export default function getStudentsByLocation(students, city) {
-    // check arg is an array before using filter
-    if (Object.getPrototypeOf(students) === Array.prototype) {
-      return students.filter((items) => items.location === city);
-    }
-    return [];
+export default (array, location) => {
+  let newArr = [];
+  if (!Array.isArray(array)) {
+    return newArr;
   }
+  newArr = array.filter((student) => student.location === location);
+  return newArr;
+};

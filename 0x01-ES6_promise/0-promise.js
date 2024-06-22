@@ -7,7 +7,7 @@ function getResponseFromAPI() {
       } else {
         reject("API response failed");
       }
-    }, 2000); // Simulate a delay of 2 seconds
+    }, 2000);
   });
 }
 export default getResponseFromAPI;

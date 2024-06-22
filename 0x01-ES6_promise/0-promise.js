@@ -1,4 +1,4 @@
-// 0-promise.js
+// Return a Promise using this prototype function getResponseFromAPI() //
 
 function getResponseFromAPI() {
   return new Promise((resolve, reject) => {
@@ -14,4 +14,3 @@ function getResponseFromAPI() {
 }
 
 export default getResponseFromAPI;
-

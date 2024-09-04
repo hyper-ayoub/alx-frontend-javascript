@@ -7,7 +7,7 @@
 /// message = 'Guardrail was processed' ///
 /// message => should be added to the queue///
 /// we will use .push to add in queue = [] ///
-
+/// we will use try && catch && finnally ///
 export default function guardrail(mathFunction) {
   const queue = [];
   try {

@@ -7,19 +7,19 @@
 import { uploadPhoto, createUser } from './utils';
 
 export default async function asyncUploadUser() {
-  let photo; let
+  let photo; let  // define the 2 objet //
     user;
   try {
-    photo = await uploadPhoto();
-    user = await createUser();
+    photo = await uploadPhoto(); // use await for function //
+    user = await createUser(); // use await for function //
     return {
-      photo,
-      user,
+      photo, // return the objet photo //
+      user, // return the objet user //
     };
   } catch (error) {
     return {
-      photo: null,
-      user: null,
+      photo: null, // return null for fails //
+      user: null, // return null for fails //
     };
   }
 }

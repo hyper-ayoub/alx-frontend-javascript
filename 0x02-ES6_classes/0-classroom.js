@@ -1,6 +1,6 @@
-// class name  ClassRoom ///
+// class name  ClassRoom //
 // accept one attribute named maxStudentsSize (Number) //
-//assigned to _maxStudentsSize//
+// assigned to _maxStudentsSize //
 
 export default class ClassRoom {
   constructor(maxStudentsSize) {

@@ -3,7 +3,6 @@
 // Each attribute must be stored in an “underscore” attribute version //
 // getter && setter //
 // method named displayFullCurrency //
-
 import Currency from './3-currency';
 
 export default class Pricing {
@@ -12,29 +11,29 @@ export default class Pricing {
     this.currency = currency;
   }
 
-  // getter //
-  get amount() {
-    return this._amount;
-  }
-
-  get currency() {
-    return this._currency;
-  }
-
   // setter //
   set amount(amount) {
     this._amount = amount;
+  }
+
+  // getter //
+  get amount() {
+    return this._amount;
   }
 
   set currency(currency) {
     this._currency = currency;
   }
 
-  displayFullCurrency() {
-    return `${this.amount} ${this.currency.displayFullCurrency()}`; // following format amount currency_name (currency_code) //
+  get currency() {
+    return this._currency;
+  }
+
+  displayFullPrice() {
+    return `${this.amount} ${this.currency.name} (${this.currency.code})`; // following format amount currency_name (currency_code) //
   }
 
   static convertPrice(amount, conversionRate) {
-    return (amount * conversionRate);
+    return amount * conversionRate;
   }
 }

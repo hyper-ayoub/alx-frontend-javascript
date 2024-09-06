@@ -5,12 +5,3 @@ console.log(ec1);
 
 const ec2 = ec1.cloneCar();
 console.log(ec2);
-
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 100-main.js
-EVCar {
-  _brand: 'Tesla',
-  _motor: 'Turbo',
-  _color: 'Red',
-  _range: '250'
-}

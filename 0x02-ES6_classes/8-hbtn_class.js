@@ -1,5 +1,34 @@
-import HolbertonClass from "./8-hbtn_class.js";
+export default class HolbertonClass {
+  constructor(size, location) {
+    this.size = size;
+    this.location = location;
+  }
 
-const hc = new HolbertonClass(12, "Mezzanine")
-console.log(Number(hc));
-console.log(String(hc));
+  get size() {
+    return this._size;
+  }
+
+  get location() {
+    return this._location;
+  }
+
+  set size(size) {
+    this._size = size;
+  }
+
+  set location(location) {
+    this._location = location;
+  }
+
+  // class is cast into a Number, it should return the size//
+  /// /class is cast into a String, it should return the location //
+  [Symbol.toPrimitive](hint) {
+    if (hint === 'number') {
+      return this._size;
+    }
+    if (hint === 'string') {
+      return this._location;
+    }
+    return this;
+  }
+}
